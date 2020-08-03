@@ -75,13 +75,13 @@ a:active {
 .title{
   text-align: center;
   font-family: menlo;
-  font-size: 5vw;
+  font-size: 5rem;
 }
 
 .links{
   text-align: center; 
   font-family: menlo;
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 .about-title{
