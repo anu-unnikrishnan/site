@@ -28,7 +28,7 @@
       <p>
       Let's start by thinking about how to write code allowing two <i>human</i> players to play Tic-Tac-Toe. First, we need some way of representing the board. I decided to store the value of each space, which can be X, O or blank, in an array of size 9 (the number of spaces on the board). For example, the following array represents the board below:
       </p>
-      <img style="width: 50%" src="board.png" class="images">
+      <img src="board.png" class="images">
       <p>
         In each round of the game, the players enter the space in which they want to place their X or O. After each move, we check if any row, column or diagonal is completely filled with either X or O. The game continues either until a player has won, or the board is full, in which case it's a draw. We can code this as a loop asking for player inputs, that we only break out of if we reach a so-called <i>terminal state</i> (X wins, O wins, or draw) of the game.
         </p>
@@ -45,7 +45,7 @@
         <p>
         The <i>game tree</i> represents all possible states of the board starting from any point in the game until the end. Below, you can see the game tree starting from an example board state given at the top. This shows us all the possible outcomes of the game.
         </p>
-        <img style="width: 60%" src="gametree.png" class="images">
+        <img src="gametree.png" class="images">
         <h4>The Minimax algorithm</h4>
         <p>
         The algorithm we'll use to create our AI is called <i>Minimax</i>. Let's say player O is the computer. Then, this player is the <i>maximiser</i>, while player X is the <i>minimiser</i>. If player O wins, the <i>score</i> is +1, if player X wins, the score is -1, and if it's a draw, the score is 0. The goal of the maximiser is to maximise their score, while the minimiser minimises it. 
@@ -54,7 +54,7 @@
         <p> 
         It's easiest to understand this through an example: 
         </p>
-        <img style="width: 60%" src="minimax.png" class="images">
+        <img src="minimax.png" class="images">
         <p>
           Let's see how the AI makes its decision on where to place O on a board that starts out as given above. It plays in the two remaining spaces, and if the board is ever in a terminal state, it calculates the score. (The scores of terminal board states are written in the squares in the above game tree.)
           
@@ -96,7 +96,7 @@
           Here's an example to demonstrate why this works, where the computer is player X:
           </p>
 
-        <img style="width: 80%" src="alpha-beta-pruning.png" class="images">
+        <img src="alpha-beta-pruning.png" class="images">
         <p>
 Starting from A, we go to B and reach a terminal state with a score of +1. Sending this score back up to A, we set <i>alpha = max(&#8722&#8734, score) = max(&#8722&#8734, +1) = +1</i>. This indicates that the best possible score so far for the maximiser is +1, corresponding to the board state B.
 </p>
@@ -131,7 +131,7 @@ Even if we've understood the algorithms behind our AI's decision-making, it migh
 We can write our algorithm for implementing Minimax with alpha-beta pruning as a recursive function, as given below for the computer as player O:
 </p>
 
-<img style="width: 80%" src="tic-tac-toe-code.png" class="images">
+<img src="tic-tac-toe-code.png" class="images">
 <p>
   The program keeps going deeper and deeper down the game tree until it reaches a terminal state, at which point it calculates and returns the score. By keeping track of the best score so far in each subtree, and pruning any branches that won't help, our AI can figure out the score and position of its optimal next move.
   </p>
