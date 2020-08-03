@@ -34,12 +34,14 @@ a:active {
   transform: translate(-40%, -50%);
 }
 
-.testprojectpage{
-  display: flex;
-  min-height: 70vh;
-  flex-direction: column;
-  justify-content: center;  /* center p horizontally */
-  align-items: left;      /* center p vertically */
+.projectpage{
+  height: 400px;
+  width: 800px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -400px;
 }
 
 .testhomepage{
@@ -57,16 +59,6 @@ a:active {
   width: 800px;
   position: fixed;
   top: 40%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -400px;
-}
-
-.projectpage{
-  height: 400px;
-  width: 800px;
-  position: absolute;
-  top: 30%;
   left: 50%;
   margin-top: -100px;
   margin-left: -400px;
