@@ -23,10 +23,7 @@ a:active {
   flex-direction: column;
   justify-content: center;  /* center p horizontally */
   align-items: center;      /* center p vertically */
-  height: 80vh;
-  width: 100%;
-  min-width: 100%;
-  min-height: 80vh;
+  height: 90vh;
 }
 
 .linkpage{
