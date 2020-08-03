@@ -32,8 +32,9 @@ a:active {
   /*top: 50%;
   left: 40%;
   transform: translate(-40%, -50%);*/
-  padding-left: 10px; 
+  padding: 10px; 
   max-width: 700px;
+  height: 70vh;
 }
 
 .projectpage{
