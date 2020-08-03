@@ -24,7 +24,8 @@ a:active {
   justify-content: center;  /* center p horizontally */
   align-items: center;      /* center p vertically */
   height: 80vh;
-  width: 90%;
+  width: 100%;
+  max-width: 100%;
   min-height: 80vh;
 }
 
