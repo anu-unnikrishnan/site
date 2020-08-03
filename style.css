@@ -116,7 +116,7 @@ body{
 
 .images{
   display: block;
-  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 400px;
-  height: auto;
 }
