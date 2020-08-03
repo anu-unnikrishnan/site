@@ -24,6 +24,7 @@ a:active {
   justify-content: center;  /* center p horizontally */
   align-items: center;
   height: 80vh;
+  margin: auto 0;
 }
 
 .linkpage{
