@@ -115,7 +115,8 @@ body{
 }
 
 .images{
-  display: block;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
   max-width: 400px;
 }
