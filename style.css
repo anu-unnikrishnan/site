@@ -30,7 +30,7 @@ a:active {
 .linkpage{
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* center horizontally */
+  overflow: auto;
   /*position: absolute;*/
   /*top: 50%;
   left: 40%;
