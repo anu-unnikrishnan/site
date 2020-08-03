@@ -41,11 +41,11 @@
     <p>
       We can make a diagram to visualise the probability of each word following another word: 
     </p>
-    <img style="width: 50%" src="state-diagram.png" class="images">
+    <img src="state-diagram.png" class="images">
     <p>
       And we can even build up a matrix that represents these probabilities. This is called a <i>transition matrix</i>. The rows and columns of the matrix correspond to each unique word in the sentence:
     </p>
-    <img style="width: 50%" src="transition-matrix-1.png" class="images">
+    <img src="transition-matrix-1.png" class="images">
     <p>
       Then, if we want to figure out the probability of the word <i>Christmas</i> being followed by the word <i>and</i>, here's what we do. We go to the row of the transition matrix corresponding to the word <i>Christmas</i> (row 3), and look at the entries in this row. The probability corresponding to the word <i>and</i> is given by the entry in column 4, which is 0.5.
       </p>
@@ -88,7 +88,7 @@
       <p>
       We then construct our transition matrix again, but now, each row corresponds to a unique block of words, and each column corresponds to a unique word:
       </p>
-      <img style="width: 50%" src="transition-matrix-2.png" class="images">
+      <img style="width: 70%" src="transition-matrix-2.png" class="images">
       <p>
         This means our chain will never choose the word following the block <i>loves Christmas</i> to be <i>tree</i>, and our problem is solved!
         </p>
@@ -125,13 +125,13 @@
         </p>
         
         <p>It came up with some pretty good storylines:</p>
-        <img style="width: 60%" src="goodplot-1.png" class="images">
-        <img style="width: 60%" src="goodplot-2.png" class="images">
-        <img style="width: 60%" src="goodplot-3.png" class="images">
+        <img style="width: 80%" src="goodplot-1.png" class="images">
+        <img style="width: 80%" src="goodplot-2.png" class="images">
+        <img style="width: 80%" src="goodplot-3.png" class="images">
         
         <p>And it also generated a few fun sentences:</p>
-        <img style="width: 60%" src="funplot-1.png" class="images">
-        <img style="width: 60%" src="funplot-2.png" class="images">
+        <img style="width: 80%" src="funplot-1.png" class="images">
+        <img style="width: 80%" src="funplot-2.png" class="images">
 
         <p>You can play around with it yourself <a style="color: #fe6d73;" href="https://christmas-movie-generator.herokuapp.com">here</a>!</p>
     </div>
