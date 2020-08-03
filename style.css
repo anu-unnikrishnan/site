@@ -30,8 +30,8 @@ a:active {
 .linkpage{
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 40%;
+  transform: translate(-40%, -50%);
 }
 
 .testprojectpage{
