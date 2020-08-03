@@ -28,7 +28,9 @@ a:active {
 }
 
 .linkpage{
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /*position: absolute;*/
   /*top: 50%;
   left: 40%;
   transform: translate(-40%, -50%);*/
