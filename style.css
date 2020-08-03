@@ -22,8 +22,8 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: center;  /* center p horizontally */
-  align-items: center;      /* center p vertically */
-  height: 90vh;
+  align-items: center;
+  height: 80vh;
 }
 
 .linkpage{
