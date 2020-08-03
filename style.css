@@ -35,30 +35,26 @@ a:active {
 }
 
 .projectpage{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 70vh; 
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.testprojectpage{
   height: 400px;
   width: 800px;
   position: absolute;
   top: 30%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -400px;
-}
-
-.testhomepage{
-  height: 200px;
-  width: 800px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -400px;
-}
-
-.testlinkpage{
-  height: 400px;
-  width: 800px;
-  position: fixed;
-  top: 40%;
   left: 50%;
   margin-top: -100px;
   margin-left: -400px;
