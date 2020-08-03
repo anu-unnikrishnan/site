@@ -20,7 +20,7 @@
       With the world in lockdown over the past few months, I've been playing a whole lot of Scrabble. So much, in fact, that I decided to make a little Scrabble game for the terminal, complete with an AI opponent that's pretty hard to beat. 
     </p>
 
-    <img style="width: 50%" src="scrabble-board.png" class="images">
+    <img src="scrabble-board.png" class="images">
 
     <h4>The rules</h4>
 
@@ -45,7 +45,7 @@ To begin, I coded the game with two human players in Python. As a first step, we
 <p>
 The Scrabble board was coded as a 15x15 Numpy matrix containing string values. To keep track of where the letter and word bonuses are, we can create two more 15x15 matrices. Each element of each bonus matrix has a value 1 if there is no bonus in the corresponding square of the board, a value 2 if there is a double letter/word bonus in that square, and a value 3 for a triple letter/word bonus. After each player's turn, we should remember to update the bonus matrices to get rid of any used bonuses, by setting the corresponding elements to be 1. Below, you can see what these matrices look like at the start of the game.
 </p>
-<img style="width: 60%" src="scrabble-bonus.png" class="images">
+<img src="scrabble-bonus.png" class="images">
 <p>
   Finally, we need a list of all the words that can be made on the board. For this, we can load up a file containing the Collins Scrabble words, and store the words in a Python dictionary for fast lookups.
   </p>
@@ -77,7 +77,7 @@ The Scrabble board was coded as a 15x15 Numpy matrix containing string values. T
   <p>
   How would an AI Scrabble player approach this game? I decided to give my Scrabble Bot a brain that contains all the words in the dictionary. Of course, this means it's pretty impossible to beat, but since there's an element of luck involved in the game, it can't always make incredible words. And it's also a good way of learning new words by playing against the Bot! 
   </p>
-  <img style="width: 60%" src="scrabble-hi.png" class="images">
+  <img src="scrabble-hi.png" class="images">
   <p>
     Let's see how to build such a Scrabble Bot. A straightforward tactic would be to go through each row/column of the board, and make a list of the letters on that row/column, as well as the Bot's own letters. Then, we could look up all the words in the dictionary that can be made with this set of letters. 
     </p>
@@ -99,11 +99,11 @@ The Scrabble board was coded as a 15x15 Numpy matrix containing string values. T
     <p>
     Scrabble Bot is a pretty fun, albeit frustrating, opponent. Below, you can see an example game in progress, complete with taunts.
     </p>
-    <img style="width: 70%" src="scrabble-midway.png" class="images">
+    <img src="scrabble-midway.png" class="images">
     <p>
       And here's a time it made some interesting words like HOTDOGS and ABBA! It generally takes no longer than 30 seconds for Scrabble Bot to decide on each move, which isn't too long to wait, especially given all the thinking it's doing.
       </p>
-      <img style="width: 70%" src="scrabble-mid.png" class="images">
+      <img src="scrabble-mid.png" class="images">
 
     </div>
     <br> 

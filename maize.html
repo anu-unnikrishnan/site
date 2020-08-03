@@ -24,7 +24,7 @@
       <p>
       Let's think of our maze as a grid of cells. The player starts out in the top left corner of the grid, and it has to find the <i>end</i> of the maze in order to escape. In each time step, the player can move either upwards, downwards, left or right, to an empty cell. Some cells have <i>blocks</i>; this means the player can't pass through these. Here's an example maze:
       </p>
-      <img style="width: 60%" src="maze-1-unsolved.png" class="images">
+      <img src="maze-1-unsolved.png" class="images">
       <h4>What is Q-learning?</h4>
       <p>
       Q-learning is a value-based approach to reinforcement learning. Let's see what this means. We say each cell on the maze grid is a <i>state</i>, and a step in each direction is an <i>action</i>. Our AI player then transitions from one state to another using an action. 
@@ -58,7 +58,7 @@
       <p>
       Now, how do we calculate each Q-value? For this, we use the <i>Bellman Equation</i>:
       </p>
-      <img style="width: 60%" src="bellman-equation.png" class="images">
+      <img src="bellman-equation.png" class="images">
 <p>
   Let's see what each of these terms mean. The expression <i>Q(s<sub>t</sub>, a<sub>t</sub>)</i> is the Q-value corresponding to the action <i>a</i> being taken on the state <i>s</i> at time <i>t</i>, and <i>r</i> is the reward we get for that action. We also need to find the maximum Q-value corresponding to the state in time <i>t+1</i>, denoted by <i>s<sub>t+1</sub></i>, over all possible actions <i>a</i>, which is written as max<i><sub>a</sub> Q(s<sub>t+1</sub>, a)</i>.
   </p>
@@ -70,7 +70,7 @@
   <p>
   At the start of the program, our Q-table for an <i>n</i>x<i>n</i> maze looks like the one below. As you can see, the rows correspond to each state (each cell of the maze grid) and the columns correspond to each action. All values are initialised to zero, except for that of cell <i>[n-1][n-1]</i>, which is the end of the maze and has a maximum reward of +10.
   </p>
-  <img style="width: 60%" src="q-table.png" class="images">
+  <img src="q-table.png" class="images">
   <h4>Moving through the maze</h4>
 
   <p>
@@ -129,13 +129,13 @@
   <p>
   Below, you can see the 300<sup>th</sup> episode. The AI has found the shortest path and escaped from the maze, easy-peasy!
   </p>
-  <img style="width: 60%" src="maze-1-solved.png" class="images">
+  <img src="maze-1-solved.png" class="images">
   <h4>The exploration/exploitation tradeoff</h4>
 
   <p>
   Lastly, we're going to add something to our maze: what if we have prizes dotted around that we want the AI to collect on its way to the end? In this case, we want the player to choose a strategy that takes it through some prize cells, but at the same time, we don't want it to lose interest in escaping from the maze. An example of this type of maze is given below.
   </p>
-  <img style="width: 60%" src="maze-2-unsolved.png" class="images">
+  <img src="maze-2-unsolved.png" class="images">
   <p>
     Let's give it a reward of <i>+3</i> if it collects a prize. This gives it some incentive to look for prizes. The problem with how we've designed our algorithm, though, is that once the AI has found a good path to the exit, it'll most likely keep choosing that path over and over again. This means that even if there are other paths that might lead it to more prizes, it might not end up exploring these!
     
@@ -150,7 +150,7 @@
     <p>
     And here's our &epsilon;-greedy Q-learning maze-solver in action, collecting a bunch of prizes on its way out of the maze! 
     </p>
-    <img style="width: 60%" src="maze-2-solved.png" class="images">
+    <img src="maze-2-solved.png" class="images">
 
     </div>
     <br> 

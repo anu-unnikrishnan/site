@@ -26,7 +26,7 @@
       Lisps are elegant programming languages made up of <i>expressions</i> in brackets. Here are some Lisp expressions and what they mean:
       </p>
 
-      <img style="width: 60%" src="lisp-examples.png" class="images">
+      <img src="lisp-examples.png" class="images">
       <p>
         Scheme is a language that belongs to the Lisp family. Each Lisp dialect has a slightly different syntax. Our aim is to build an interpreter for Scheme, which means we want it to execute code written in Scheme. To make our job easier, we're only going to do this for a super simplified version of Scheme. 
         </p>
@@ -34,7 +34,7 @@
         <p>
         Making an interpreter involves two steps: <i>parsing</i> and <i>evaluating</i> our input expression. We'll go through what these steps are, and how to code them. 
         </p>
-        <img style="width: 70%" src="lisp-interpreter.png" class="images">
+        <img src="lisp-interpreter.png" class="images">
         <h4>Building a parser</h4>
 
         <p>
@@ -44,11 +44,11 @@
         <p>
         The AST is made up of nodes that represent operations, each of which has children that represent the arguments that operation is applied to. For example, the figure below shows a Scheme expression and its AST:
         </p>
-        <img style="width: 60%" src="lisp-ast.png" class="images">
+        <img src="lisp-ast.png" class="images">
         <p>
           Our aim is to create a parser that can take as input any Scheme expression, and output a nested list that represents the AST. This will tell us which operations are applied to which arguments, and in what order! Going back to the above example expression, we want our parser to work as follows:
           </p>
-          <img style="width: 60%" src="lisp-parser.png" class="images">
+          <img src="lisp-parser.png" class="images">
           <p>
             To do this, we should first split the expression up into chunks. Then, we can check if it's a valid expression (for example, does it start and end with brackets? Does it contain unbalanced brackets?), and raise an error if so. Otherwise, we're ready to start parsing it, chunk by chunk!
             </p>
@@ -61,11 +61,11 @@
             As an example, let's go through how this would work for the expression we saw before. We'll start by chopping up our expression into chunks, and looking at the first sub-expression:
             </p>
 
-            <img style="width: 40%" src="lisp-parsing-ex-1.png" class="images">
+            <img src="lisp-parsing-ex-1.png" class="images">
             <p>
               Now let's keep going till we get to the end of the next expression (the next closing bracket):
               </p>
-              <img style="width: 40%" src="lisp-parsing-ex-2.png" class="images">
+              <img src="lisp-parsing-ex-2.png" class="images">
               <p>
                 As you can see, this gives us the parsed output we wanted! In this way, we can parse any valid Scheme expression and build up our AST.
                 </p>
@@ -75,7 +75,7 @@
                 <p>
                 Now that we have our parsed expression, how do we actually evaluate it? We want to take the nested list we've created and perform the computation it's telling us to do. Once we've done this, we'll have built an interpreter!
                 </p>
-                <img style="width: 60%" src="lisp-evaluator.png" class="images">
+                <img src="lisp-evaluator.png" class="images">
                 <p>
                   Let's start by noting that we need to separate the expression into a function (what operation we should do) and a list of arguments (what we apply the operation on). We're going to make a basic interpreter that supports arithmetic operations, conditional statements, and a few others like <i>define, begin, list, car</i> and <i>cdr</i>.
                   </p>
@@ -117,7 +117,7 @@
                   <p>
                   Let's see Baby Lisp in action!
                   </p>
-                  <img style="width: 60%" src="lisp-eval.png" class="images">
+                  <img src="lisp-eval.png" class="images">
 
     </div>
     <br> 
