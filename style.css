@@ -34,15 +34,12 @@ a:active {
   transform: translate(-50%, -50%);
 }
 
-.projectpage{
+.testprojectpage{
   display: flex;
+  min-height: 70vh;
   flex-direction: column;
   justify-content: center;  /* center p horizontally */
   align-items: left;      /* center p vertically */
-  height: 100%;
-  padding: 5em;
-  margin: auto;
-  width: 800px;
 }
 
 .testhomepage{
@@ -65,7 +62,7 @@ a:active {
   margin-left: -400px;
 }
 
-.testprojectpage{
+.projectpage{
   height: 400px;
   width: 800px;
   position: absolute;
