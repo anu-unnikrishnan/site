@@ -25,6 +25,7 @@ a:active {
   align-items: center;
   height: 90vh;
   width: 100vw;
+  padding: 0 2px 2px 0;
 }
 
 .linkpage{
