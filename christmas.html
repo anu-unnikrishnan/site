@@ -32,13 +32,23 @@
     </p>
     <h4>How do we build a Markov chain?</h4>
     <p> 
-      Let's see how this works with an example sentence: <i>She loves Christmas and every Christmas tradition.</i>
+      Let's see how this works with an example sentence: 
+      <!--<i>She loves Christmas and every Christmas tradition.</i>-->
     </p>
+    <div class="pseudocode">
+      She loves Christmas and every Christmas tradition.
+    </div>
     <p>
       In this sentence, the word <i>she</i> is always followed by the word <i>loves</i>, while the word <i>Christmas</i> is followed by both <i>and</i> and <i>tradition</i>. Let's figure this out for each unique word:
     </p>
-    <center><p><i>she</i>: [<i>loves</i>], &nbsp;  <i>loves</i>: [<i>Christmas</i>], &nbsp;  <i>Christmas</i>: [<i>and</i>, <i>tradition</i>], <br / > <i>and</i>: [<i>every</i>], &nbsp;  <i>every</i>: [<i>Christmas</i>]</p></center>
-    <p>
+    <div class="pseudocode">
+      she: [loves] <br> loves: [Christmas] <br> 
+      Christmas: [and, tradition] <br> 
+      and: [every] <br> every: [Christmas]
+    </div>
+    <!--<center><p><i>she</i>: [<i>loves</i>], &nbsp;  <i>loves</i>: [<i>Christmas</i>], &nbsp;  <i>Christmas</i>: [<i>and</i>, <i>tradition</i>], <br / > <i>and</i>: [<i>every</i>], &nbsp;  <i>every</i>: [<i>Christmas</i>]</p></center>
+    -->
+      <p>
       We can make a diagram to visualise the probability of each word following another word: 
     </p>
     <img src="state-diagram.png" class="images">
@@ -60,14 +70,36 @@
       </p>
       
       <p> For example, let's say our corpus is now:
-      <i>She loves Christmas and every Christmas tradition but putting up the Christmas tree is the best part.</i>
-      Our Markov chain may very well output the nonsensical sentence: <i>She loves Christmas tree is the best part.</i>
+      <div class="pseudocode">She loves Christmas and every Christmas tradition but putting up the Christmas tree is the best part.</div>
+      </p>
+
+      <p>
+      Our Markov chain may very well output the nonsensical sentence: <div class="pseudocode">She loves Christmas tree is the best part.</div>
       </p>
       
       <p>
       A way to end up with more realistic-sounding text is by looking at blocks of <span style="display: inline" class="pseudocode-inline">k</span> words, rather than just one word at a time. Let's now see which word follows each block of <span style="display: inline" class="pseudocode-inline">k = 2</span> words:
       </p>
       
+      <div class="pseudocode">
+        she loves: [Christmas] <br>
+        loves Christmas: [and] <br>
+        Christmas and: [every] <br>
+        and every: [Christmas] <br>
+        every Christmas: [tradition] <br>
+        Christmas tradition: [but] <br>
+        tradition but: [putting] <br>
+        but putting: [up] <br>
+        putting up: [the] <br>
+        up the: [Christmas] <br>
+        the Christmas: [tree] <br>
+        Christmas tree: [is] <br>
+        tree is: [the] <br>
+        is the: [best] <br>
+        the best: [part]
+      </div>
+
+    <!--
       <center><p><i>she loves</i>: [<i>Christmas</i>], &nbsp;  
       <i>loves Christmas</i>: [<i>and</i>], &nbsp;  
       <i>Christmas and</i>: [<i>every</i>], <br / > 
@@ -84,6 +116,7 @@
       <i>is the</i>: [<i>best</i>], &nbsp;  
       <i>the best</i>: [<i>part</i>]
       </center>
+    -->
       
       <p>
       We then construct our transition matrix again, but now, each row corresponds to a unique block of words, and each column corresponds to a unique word:
@@ -121,7 +154,7 @@
         
         <h4>In goes (real) Christmas movie plots, out comes (fake) Christmas movie plots</h4>
         <p>
-        I collected plots of a whole bunch of Christmas movies, and rewrote parts of them to help my chain out a little (for example, making sure they all started with the words 'a woman'). This way, I could kick off my Markov chain with the words 'a woman', play around with <span style="display: inline" class="pseudocode-inline">k</span>, and see what ideas it had for my Christmas movie heroine. 
+        I collected plots of a whole bunch of Christmas movies, and rewrote parts of them to help my chain out a little (for example, making sure they all started with the words '<span style="display: inline" class="pseudocode-inline">a woman</span>'). This way, I could kick off my Markov chain with the words '<span style="display: inline" class="pseudocode-inline">a woman</span>', play around with <span style="display: inline" class="pseudocode-inline">k</span>, and see what ideas it had for my Christmas movie heroine. 
         </p>
         
         <p>It came up with some pretty good storylines:</p>
