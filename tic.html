@@ -89,7 +89,7 @@
           
           <h4>Alpha-beta pruning</h4>
           <p>
-          Let's denote the best choice so far for the maximiser by <i>alpha</i>, and the best choice so far for the minimiser by <i>beta</i>. Starting off with <i>alpha = &#8722&#8734, beta = +&#8734</i>, we set off exploring the game tree. If we find a higher value for <i>alpha</i> or a lower value for <i>beta</i>, we update them. If <i>alpha &#x2265 beta</i>, we don't go down that branch of the tree: it's guaranteed to not be a better option.
+          Let's denote the best choice so far for the maximiser by <span style="display: inline" class="pseudocode-inline">alpha</span>, and the best choice so far for the minimiser by <span style="display: inline" class="pseudocode-inline"></span>beta</span>. Starting off with <span style="display: inline" class="pseudocode-inline">alpha = &#8722&#8734, beta = +&#8734</span>, we set off exploring the game tree. If we find a higher value for <span style="display: inline" class="pseudocode-inline">alpha</span> or a lower value for <span style="display: inline" class="pseudocode-inline">beta</span>, we update them. If <span style="display: inline" class="pseudocode-inline">alpha &#x2265 beta</span>, we don't go down that branch of the tree: it's guaranteed to not be a better option.
           </p>
           
           <p>
@@ -98,15 +98,15 @@
 
         <img src="alpha-beta-pruning.png" class="images">
         <p>
-Starting from A, we go to B and reach a terminal state with a score of +1. Sending this score back up to A, we set <i>alpha = max(&#8722&#8734, score) = max(&#8722&#8734, +1) = +1</i>. This indicates that the best possible score so far for the maximiser is +1, corresponding to the board state B.
+Starting from A, we go to B and reach a terminal state with a score of +1. Sending this score back up to A, we set <span style="display: inline" class="pseudocode-inline">alpha = max(&#8722&#8734, score) = max(&#8722&#8734, +1) = +1</span>. This indicates that the best possible score so far for the maximiser is +1, corresponding to the board state B.
 </p>
 
 <p>
-Then, going down to C, we first reach E and get a terminal state with score -1. Heading back up to C, we update <i>beta = min(+&#8734, -1) = -1</i>. Since we have <i>alpha &#x2265 beta</i>, we can prune the rest of the subtree (states F and I)! Going back to A, we update <i>alpha = max(+1, -1) = +1</i>, so that doesn't change. 
+Then, going down to C, we first reach E and get a terminal state with score -1. Heading back up to C, we update <span style="display: inline" class="pseudocode-inline">beta = min(+&#8734, -1) = -1</span>. Since we have <span style="display: inline" class="pseudocode-inline">alpha &#x2265 beta</span>, we can prune the rest of the subtree (states F and I)! Going back to A, we update <span style="display: inline" class="pseudocode-inline">alpha = max(+1, -1) = +1</span>, so that doesn't change. 
 </p>
 
 <p>
-Finally, we go to D and down to G, reaching a terminal state with a score of -1. Going back up to D, we update <i>beta = min(+&#8734, -1) = -1</i>. Again, we get <i>alpha &#x2265 beta</i>, so we can prune the state H! We send the latest score up to A, checking if we can update <i>alpha = max(+1, -1) = +1</i>, so that remains the same. 
+Finally, we go to D and down to G, reaching a terminal state with a score of -1. Going back up to D, we update <span style="display: inline" class="pseudocode-inline">beta = min(+&#8734, -1) = -1</span>. Again, we get <span style="display: inline" class="pseudocode-inline">alpha &#x2265 beta</span>, so we can prune the state H! We send the latest score up to A, checking if we can update <span style="display: inline" class="pseudocode-inline">alpha = max(+1, -1) = +1</span>, so that remains the same. 
 </p>
 
 <p>
@@ -114,8 +114,8 @@ Looking at the diagram, it's not too hard to see why this works. Once the AI has
 </p>
 
 <p>
-After reaching E, we know that no matter what score we get from the subtree of F, it can't be lower than -1 (since this is already the lowest possible score we can get!). This means <i>min(E, F)</i> will always be -1. So, there's no need to actually explore F and below!
-Similarly, going to D and down to G, we again already get the lowest possible value of <i>min(G, H) = -1</i>, so we don't need to check out H.
+After reaching E, we know that no matter what score we get from the subtree of F, it can't be lower than -1 (since this is already the lowest possible score we can get!). This means <span style="display: inline" class="pseudocode-inline">min(E, F)</span> will always be -1. So, there's no need to actually explore F and below!
+Similarly, going to D and down to G, we again already get the lowest possible value of <span style="display: inline" class="pseudocode-inline">min(G, H) = -1</span>, so we don't need to check out H.
 </p>
 
 <p>

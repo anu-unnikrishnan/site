@@ -40,7 +40,7 @@
           </p>
           
           <p>
-          Finally, we need to choose an <i>activation function</i> for each layer. This function takes the input to each neuron, which includes the corresponding weights and biases, and gives us an output that's within some desired range. We're going to use the <i>sigmoid &sigma;</i> as our activation function:
+          Finally, we need to choose an <i>activation function</i> for each layer. This function takes the input to each neuron, which includes the corresponding weights and biases, and gives us an output that's within some desired range. We're going to use the <i>sigmoid</i> <span style="display: inline" class="pseudocode-inline">&sigma;</span> as our activation function:
           </p>
           <img src="sigmoid.png" class="images">
           <h4>Setting up the matrices</h4>
@@ -50,12 +50,12 @@
           </p>
           <img src="input-output-vectors.png" class="images">
           <p>
-            What about our weights and biases matrices? We need two weights matrices, one containing the weights of the connections between layers 0 and 1 (which we'll call <i>w<sup>0</sup></i>), and another for layers 1 and 2 (which we'll call <i>w<sup>1</sup></i>). 
-            Then, let's say the <i>[j, k]<sup>th</sup></i> element of <i>w<sup>0</sup></i> is the weight connecting neuron <i>k</i> in layer 0 to neuron <i>j</i> in layer 1. Similarly, the <i>[j, k]<sup>th</sup></i> element of <i>w<sup>1</sup></i> is the weight connecting neuron <i>k</i> in layer 1 to neuron <i>j</i> in layer 2. 
+            What about our weights and biases matrices? We need two weights matrices, one containing the weights of the connections between layers 0 and 1 (which we'll call <span style="display: inline" class="pseudocode-inline">w<sup>0</sup></span>), and another for layers 1 and 2 (which we'll call <span style="display: inline" class="pseudocode-inline">w<sup>1</sup></span>). 
+            Then, let's say the <span style="display: inline" class="pseudocode-inline">[j, k]<sup>th</sup></span> element of <span style="display: inline" class="pseudocode-inline">w<sup>0</sup></span> is the weight connecting neuron <span style="display: inline" class="pseudocode-inline">k</span> in layer 0 to neuron <span style="display: inline" class="pseudocode-inline">j</span> in layer 1. Similarly, the <span style="display: inline" class="pseudocode-inline">[j, k]<sup>th</sup></span> element of <span style="display: inline" class="pseudocode-inline">w<sup>1</sup></span> is the weight connecting neuron <span style="display: inline" class="pseudocode-inline">k</span> in layer 1 to neuron <span style="display: inline" class="pseudocode-inline">j</span> in layer 2. 
             </p>
             
             <p>
-            As for the biases matrices, we also need two of these (there are no biases for the input layer). The first bias matrix, which we'll call <i>b<sup>0</sup></i>, should contain the biases of the neurons in layer 1, and the second bias matrix, which we'll call <i>b<sup>1</sup></i>, should contain the biases of the neurons in layer 2. Then, the <i>j<sup>th</sup></i> element of each bias matrix is the bias of the <i>j<sup>th</sup></i> neuron in that layer.
+            As for the biases matrices, we also need two of these (there are no biases for the input layer). The first bias matrix, which we'll call <span style="display: inline" class="pseudocode-inline">b<sup>0</sup></span>, should contain the biases of the neurons in layer 1, and the second bias matrix, which we'll call <span style="display: inline" class="pseudocode-inline">b<sup>1</sup></span>, should contain the biases of the neurons in layer 2. Then, the <span style="display: inline" class="pseudocode-inline">j<sup>th</sup></span> element of each bias matrix is the bias of the <span style="display: inline" class="pseudocode-inline">j<sup>th</sup></span> neuron in that layer.
             </p>
             
             <p>
@@ -72,11 +72,11 @@
               </p>
               
               <p>
-              Let's see what goes on between layers 0 and 1. Our input is <i>x</i>, which first needs to be weighted using <i>w<sup>0</sup></i>, and added with the bias <i>b<sup>0</sup></i>, to give a term we'll call <i>z<sup>1</sup></i>. When this passes through the neurons in layer 1, it goes through the activation function <i>&sigma;</i>, giving an output that we'll denote <i>a<sup>1</sup></i>. We can write all this as simple equations: 
+              Let's see what goes on between layers 0 and 1. Our input is <span style="display: inline" class="pseudocode-inline">x</span>, which first needs to be weighted using <span style="display: inline" class="pseudocode-inline">w<sup>0</sup></span>, and added with the bias <span style="display: inline" class="pseudocode-inline">b<sup>0</sup></span>, to give a term we'll call <span style="display: inline" class="pseudocode-inline">z<sup>1</sup></span>. When this passes through the neurons in layer 1, it goes through the activation function <span style="display: inline" class="pseudocode-inline">&sigma;</span>, giving an output that we'll denote <span style="display: inline" class="pseudocode-inline">a<sup>1</sup></span>. We can write all this as simple equations: 
               </p>
               <img src="feedforward-1.png" class="images">
               <p>
-                Similar things happen between layers 1 and 2! The input to layer 2 is now <i>a<sup>1</sup></i>, which goes through weighting, biasing and activation, to give an output <i>a<sup>2</sup></i>:
+                Similar things happen between layers 1 and 2! The input to layer 2 is now <span style="display: inline" class="pseudocode-inline">a<sup>1</sup></span>, which goes through weighting, biasing and activation, to give an output <span style="display: inline" class="pseudocode-inline">a<sup>2</sup></span>:
                 </p>
                 <img src="feedforward-2.png" class="images">
                 <p>
@@ -89,31 +89,31 @@
                   </p>
                   <img src="loss-function.png" class="images">
                   <p>
-                    The term <i>a<sup>L</sup></i> is the activation of the output layer <i>L</i>, so in our case, <i>L = 2</i>.
+                    The term <span style="display: inline" class="pseudocode-inline">a<sup>L</sup></span> is the activation of the output layer <span style="display: inline" class="pseudocode-inline">L</span>, so in our case, <span style="display: inline" class="pseudocode-inline">L = 2</span>.
                     
                     <p>
                     Our neural network learns by adjusting the weights and biases so that it can minimise the loss function. We're going to give the network one randomly chosen input at a time, and let it calculate the adjustments for that input. This is called <i>stochastic gradient descent</i>. 
                     </p>
                     
                     <p>
-                    To do this, we'll use a method called <i>backpropagation</i>. This algorithm tells us exactly how to adjust our network parameters by going backwards through the network. We first need to determine a parameter <i>&delta;<sup>l</sup></i> for each layer <i>l</i>, starting from the output layer <i>L</i>. 
+                    To do this, we'll use a method called <i>backpropagation</i>. This algorithm tells us exactly how to adjust our network parameters by going backwards through the network. We first need to determine a parameter <span style="display: inline" class="pseudocode-inline">&delta;<sup>l</sup></span> for each layer <span style="display: inline" class="pseudocode-inline">l</span>, starting from the output layer <span style="display: inline" class="pseudocode-inline">L</span>. 
                     To do this, we use the following equations:
                     </p>
                     <img src="backprop-delta.png" class="images">
                     <p>
-                      There's a few things to note here. Firstly, since we're considering each input separately, we put <i>n = 1</i> in the loss function, which means its gradient with respect to <i>a</i> is simply <i>(a<sup>L</sup> &minus; y)</i>.
+                      There's a few things to note here. Firstly, since we're considering each input separately, we put <span style="display: inline" class="pseudocode-inline">n = 1</span> in the loss function, which means its gradient with respect to <span style="display: inline" class="pseudocode-inline">a</span> is simply <span style="display: inline" class="pseudocode-inline">(a<sup>L</sup> &minus; y)</span>.
                       </p>
                       
                       <p>
-                      Secondly, the symbol &#8857; denotes the Hadamard product, which we can calculate for two matrices of the same dimensions by taking the elementwise product. And the symbol &middot; refers to the dot product (the ordinary matrix product), which for two matrices of sizes <i>m&times;n</i> and <i>n&times;p</i> gives a new matrix of size <i>m&times;p</i>.
+                      Secondly, the symbol &#8857; denotes the Hadamard product, which we can calculate for two matrices of the same dimensions by taking the elementwise product. And the symbol &middot; refers to the dot product (the ordinary matrix product), which for two matrices of sizes <span style="display: inline" class="pseudocode-inline">m&times;n</span> and <span style="display: inline" class="pseudocode-inline">n&times;p</span> gives a new matrix of size <span style="display: inline" class="pseudocode-inline">m&times;p</span>.
                       </p>
                       
                       <p>
-                      Finally, <i>&sigma;'</i> is the derivative of <i>&sigma;</i>, which has a particularly neat form!
+                      Finally, <span style="display: inline" class="pseudocode-inline">&sigma;'</span> is the derivative of <span style="display: inline" class="pseudocode-inline">&sigma;</span>, which has a particularly neat form!
                       </p>
                       
                       <p>
-                      Then, we use <i>&delta;<sup>l</sup></i> to calculate the updates to each weight and bias matrix:
+                      Then, we use <span style="display: inline" class="pseudocode-inline">&delta;<sup>l</sup></span> to calculate the updates to each weight and bias matrix:
                       </p>
     <img src="backprop.png" class="images">
     <p>
@@ -127,7 +127,7 @@
         <h4>Coding our neural network</h4>
         <p>
         Thanks to NumPy, it's pretty straightforward to code this in Python.
-        Ideally, we want our code to generalise to a neural network with any number of neurons and layers.  So let's store all our parameters (weights, biases, change in weights, change in biases, <i>z</i>, <i>a</i>, <i>&delta;</i>) in arrays whose sizes depend on the number of layers. 
+        Ideally, we want our code to generalise to a neural network with any number of neurons and layers.  So let's store all our parameters (weights, biases, change in weights, change in biases, <span style="display: inline" class="pseudocode-inline">z</span>, <span style="display: inline" class="pseudocode-inline">a</span>, <span style="display: inline" class="pseudocode-inline">&delta;</span>) in arrays whose sizes depend on the number of layers. 
         
         <p>
         Then, we need two nested loops: one going through each epoch, and another going through each individual input. Once we're done with each input, we update the weights and biases. You can see the full code on my <a style="color: #fe6d73;" href="https://github.com/anu-unnikrishnan/neural-network">Github</a>.
@@ -146,11 +146,11 @@
         Our first step is to randomly split this data into a set for training the network, and a set for testing the network. Let's use 80% of the data for training, and the remaining 20% to test how well the training worked. We can do this easily using scikit-learn's <i>train_test_split</i> function.
         </p>
         
-        <p> The next thing to think about is our network architecture. Since there are four features in the input data for each banknote, there should be four neurons in our input layer. And since we're just classifying the output into two possible categories (real or fake), we could just have one neuron in the output layer, and check if <i>a<sup>L</sup></i> is closer to 0 or 1 to decide if it's real or fake. As for the hidden layer(s), feel free to play around with this.
+        <p> The next thing to think about is our network architecture. Since there are four features in the input data for each banknote, there should be four neurons in our input layer. And since we're just classifying the output into two possible categories (real or fake), we could just have one neuron in the output layer, and check if <span style="display: inline" class="pseudocode-inline">a<sup>L</sup></span> is closer to 0 or 1 to decide if it's real or fake. As for the hidden layer(s), feel free to play around with this.
         </p>
         
         <p>
-        Then, we're going to make one modification to stochastic gradient descent to make our network more efficient. Instead of updating the weights and biases after each single training input, we're going to split the training data up randomly into <i>minibatches</i> of <i>m</i> inputs. (So now we have another nested loop to do the splitting.) We'll now adjust the network parameters only after each minibatch has been processed by the network. 
+        Then, we're going to make one modification to stochastic gradient descent to make our network more efficient. Instead of updating the weights and biases after each single training input, we're going to split the training data up randomly into <i>minibatches</i> of <span style="display: inline" class="pseudocode-inline">m</span> inputs. (So now we have another nested loop to do the splitting.) We'll now adjust the network parameters only after each minibatch has been processed by the network. 
         </p>
         
         <p>

@@ -60,15 +60,15 @@
       </p>
       <img src="bellman-equation.png" class="images">
 <p>
-  Let's see what each of these terms mean. The expression <i>Q(s<sub>t</sub>, a<sub>t</sub>)</i> is the Q-value corresponding to the action <i>a</i> being taken on the state <i>s</i> at time <i>t</i>, and <i>r</i> is the reward we get for that action. We also need to find the maximum Q-value corresponding to the state in time <i>t+1</i>, denoted by <i>s<sub>t+1</sub></i>, over all possible actions <i>a</i>, which is written as max<i><sub>a</sub> Q(s<sub>t+1</sub>, a)</i>.
+  Let's see what each of these terms mean. The expression <span style="display: inline" class="pseudocode-inline">Q(s<sub>t</sub>, a<sub>t</sub>)</span> is the Q-value corresponding to the action <span style="display: inline" class="pseudocode-inline">a</span> being taken on the state <span style="display: inline" class="pseudocode-inline">s</span> at time <span style="display: inline" class="pseudocode-inline">t</span>, and <span style="display: inline" class="pseudocode-inline">r</span> is the reward we get for that action. We also need to find the maximum Q-value corresponding to the state in time <span style="display: inline" class="pseudocode-inline">t+1</span>, denoted by <span style="display: inline" class="pseudocode-inline">s<sub>t+1</sub></span>, over all possible actions <span style="display: inline" class="pseudocode-inline">a</span>, which is written as <span style="display: inline" class="pseudocode-inline">max<sub>a</sub> Q(s<sub>t+1</sub>, a)</span>.
   </p>
   
   <p>
-  The parameter &alpha; is the learning rate, which tells us the importance of new versus old information. The parameter &gamma; is the discount factor, which characterises the importance of immediate versus future rewards. We can play around with the values of these parameters, and see for ourselves what effect they have on the performance of our AI. In my program, I set &alpha; = 0.1 and &gamma; = 0.9.
+  The parameter <span style="display: inline" class="pseudocode-inline">&alpha;</span> is the learning rate, which tells us the importance of new versus old information. The parameter <span style="display: inline" class="pseudocode-inline">&gamma;</span> is the discount factor, which characterises the importance of immediate versus future rewards. We can play around with the values of these parameters, and see for ourselves what effect they have on the performance of our AI. In my program, I set <span style="display: inline" class="pseudocode-inline">&alpha; = 0.1, &gamma; = 0.9</span>.
   </p>
   
   <p>
-  At the start of the program, our Q-table for an <i>n</i>x<i>n</i> maze looks like the one below. As you can see, the rows correspond to each state (each cell of the maze grid) and the columns correspond to each action. All values are initialised to zero, except for that of cell <i>[n-1][n-1]</i>, which is the end of the maze and has a maximum reward of +10.
+  At the start of the program, our Q-table for an <span style="display: inline" class="pseudocode-inline">n&times;n</span> maze looks like the one below. As you can see, the rows correspond to each state (each cell of the maze grid) and the columns correspond to each action. All values are initialised to zero, except for that of cell <span style="display: inline" class="pseudocode-inline">[n-1][n-1]</span>, which is the end of the maze and has a maximum reward of +10.
   </p>
   <img src="q-table.png" class="images">
   <h4>Moving through the maze</h4>
@@ -104,7 +104,7 @@
   </p>
   
   <p>
-  Next, we have to create our Q-table. We can easily store our Q-table as a Pandas dataframe. I indexed the rows of the Q-table (representing states) as <i>[row of grid],[column of grid]</i>. Then, if we want to look up the Q-values corresponding to the maze grid cell [1][2], for example, we check out the row indexed by <i>1,2</i> of the Q-table.
+  Next, we have to create our Q-table. We can easily store our Q-table as a Pandas dataframe. I indexed the rows of the Q-table (representing states) as <span style="display: inline" class="pseudocode-inline">[row of grid],[column of grid]</span>. Then, if we want to look up the Q-values corresponding to the maze grid cell <span style="display: inline" class="pseudocode-inline">[1][2]</span>, for example, we check out the row indexed by <span style="display: inline" class="pseudocode-inline">1,2</span> of the Q-table.
   </p>
   
   <p>

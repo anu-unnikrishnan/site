@@ -27,7 +27,7 @@
     </p>
 
 <p>
-The scoring of Scrabble is a bit more complicated. Each letter has an associated number of points (eg. X is 8 points, A is 1 point). The players get points for all the letters in each new word they make (which is often more than one word!). On top of that, some squares give you extra points: either double or triple the points for the letter on that square, or double or triple the points for each word you make using that letter. 
+The scoring of Scrabble is a bit more complicated. Each letter has an associated number of points (eg. <span style="display: inline" class="pseudocode-inline">X</span> is 8 points, <span style="display: inline" class="pseudocode-inline">A</span> is 1 point). The players get points for all the letters in each new word they make (which is often more than one word!). On top of that, some squares give you extra points: either double or triple the points for the letter on that square, or double or triple the points for each word you make using that letter. 
 </p>
 
 <p>
@@ -41,7 +41,7 @@ To begin, I coded the game with two human players in Python. As a first step, we
 </p>
 
 <p>
-The Scrabble board was coded as a 15x15 Numpy matrix containing string values. To keep track of where the letter and word bonuses are, we can create two more 15x15 matrices. Each element of each bonus matrix has a value 1 if there is no bonus in the corresponding square of the board, a value 2 if there is a double letter/word bonus in that square, and a value 3 for a triple letter/word bonus. After each player's turn, we should remember to update the bonus matrices to get rid of any used bonuses, by setting the corresponding elements to be 1. Below, you can see what these matrices look like at the start of the game.
+The Scrabble board was coded as a <span style="display: inline" class="pseudocode-inline">15&times;15</span> Numpy matrix containing string values. To keep track of where the letter and word bonuses are, we can create two more <span style="display: inline" class="pseudocode-inline">15&times;15</span> matrices. Each element of each bonus matrix has a value 1 if there is no bonus in the corresponding square of the board, a value 2 if there is a double letter/word bonus in that square, and a value 3 for a triple letter/word bonus. After each player's turn, we should remember to update the bonus matrices to get rid of any used bonuses, by setting the corresponding elements to be 1. Below, you can see what these matrices look like at the start of the game.
 </p>
 <img src="scrabble-bonus.png" class="images">
 <p>
@@ -51,7 +51,7 @@ The Scrabble board was coded as a 15x15 Numpy matrix containing string values. T
   <h4>Playing Scrabble with a human</h4>
   
   <p>
-  How does the game work for two human players? Let's ask each player to enter their input as each letter followed by the square they want to play it in. For example, the input A 8 8, X 8 9, E 8 10 means play the letter A in position [8][8], the letter X in position [8][9], and the letter E in position [8][10] of the board. We process this input and check if it's valid (for example, does the player actually have these letters? Do the positions they enter correspond to empty spaces on the board?).
+  How does the game work for two human players? Let's ask each player to enter their input as each letter followed by the square they want to play it in. For example, the input <span style="display: inline" class="pseudocode-inline">A 8 8, X 8 9, E 8 10</span> means play the letter <span style="display: inline" class="pseudocode-inline">A</span> in position <span style="display: inline" class="pseudocode-inline">[8][8]</span>, the letter <span style="display: inline" class="pseudocode-inline">X</span> in position <span style="display: inline" class="pseudocode-inline">[8][9]</span>, and the letter <span style="display: inline" class="pseudocode-inline">E</span> in position <span style="display: inline" class="pseudocode-inline">[8][10]</span> of the board. We process this input and check if it's valid (for example, does the player actually have these letters? Do the positions they enter correspond to empty spaces on the board?).
   </p>
   
   <p>
@@ -99,7 +99,7 @@ The Scrabble board was coded as a 15x15 Numpy matrix containing string values. T
     </p>
     <img src="scrabble-midway.png" class="images">
     <p>
-      And here's a time it made some interesting words like HOTDOGS and ABBA! It generally takes no longer than 30 seconds for Scrabble Bot to decide on each move, which isn't too long to wait, especially given all the thinking it's doing.
+      And here's a time it made some interesting words like <span style="display: inline" class="pseudocode-inline">HOTDOGS</span> and <span style="display: inline" class="pseudocode-inline">ABBA</span>! It generally takes no longer than 30 seconds for Scrabble Bot to decide on each move, which isn't too long to wait, especially given all the thinking it's doing.
       </p>
       <img src="scrabble-mid.png" class="images">
 

@@ -134,6 +134,12 @@ h4{
   padding: 10px;
 }
 
+.pseudocode-inline{
+  font-family: menlo;
+  font-size: 14px;
+  padding: 2px;
+}
+
 .comment{
   font-family: menlo;
   font-size: 12px;

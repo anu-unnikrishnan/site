@@ -65,7 +65,7 @@
       </p>
       
       <p>
-      A way to end up with more realistic-sounding text is by looking at blocks of <i>k</i> words, rather than just one word at a time. Let's now see which word follows each block of <i>k=2</i> words:
+      A way to end up with more realistic-sounding text is by looking at blocks of <span style="display: inline" class="pseudocode-inline">k</span> words, rather than just one word at a time. Let's now see which word follows each block of <span style="display: inline" class="pseudocode-inline">k = 2</span> words:
       </p>
       
       <center><p><i>she loves</i>: [<i>Christmas</i>], &nbsp;  
@@ -94,7 +94,7 @@
         </p>
         
         <p>
-        Of course, this leads to another dilemma: if we don't have a large enough corpus, increasing <i>k</i> could lead to our Markov chain just re-generating our corpus, rather than giving us something new. It's best to play around with <i>k</i> to see what works best for you.
+        Of course, this leads to another dilemma: if we don't have a large enough corpus, increasing <span style="display: inline" class="pseudocode-inline">k</span> could lead to our Markov chain just re-generating our corpus, rather than giving us something new. It's best to play around with <span style="display: inline" class="pseudocode-inline">k</span> to see what works best for you.
         </p>
         
         <h4>Coding our chain</h4>
@@ -104,15 +104,15 @@
         </p>
         
         <p> 
-        First, we want to do clean up our corpus and split it up into blocks of <i>k</i> unique words. We're going to treat every punctuation mark as a separate word, so that our program understands which words are used to start and end sentences.
+        First, we want to do clean up our corpus and split it up into blocks of <span style="display: inline" class="pseudocode-inline">k</span> unique words. We're going to treat every punctuation mark as a separate word, so that our program understands which words are used to start and end sentences.
         </p>
         
         <p> 
-        Second, we need to build up our transition matrix and fill it with probabilities. Starting from a matrix of all zeros, we add 1 to the [<i>i, j</i>]th element of the matrix if the block of words corresponding to row <i>i</i> is followed by the word corresponding to column <i>j</i>. Once we've gone through the whole corpus and done this for every block of words, we convert the matrix elements to probabilities by dividing each element by the sum of its row. And that's how we get our transition matrix! 
+        Second, we need to build up our transition matrix and fill it with probabilities. Starting from a matrix of all zeros, we add 1 to the <span style="display: inline" class="pseudocode-inline">[i, j]<sup>th</sup></span> element of the matrix if the block of words corresponding to row <span style="display: inline" class="pseudocode-inline">i</span> is followed by the word corresponding to column <span style="display: inline" class="pseudocode-inline">j</span>. Once we've gone through the whole corpus and done this for every block of words, we convert the matrix elements to probabilities by dividing each element by the sum of its row. And that's how we get our transition matrix! 
         </p>
         
         <p> 
-        And finally, we want to create some new text. To begin, we choose a block of words to start off our chain. This could be chosen at random, or if you want your text to start in a specific way, feed it in! Once we've given our chain some input (let's say we give it the <i>i</i>th unique block), it should look at the <i>i</i>th row of the transition matrix, and pick the next word at random from that probability distribution. We can do this by using a weighted random choice function. 
+        And finally, we want to create some new text. To begin, we choose a block of words to start off our chain. This could be chosen at random, or if you want your text to start in a specific way, feed it in! Once we've given our chain some input (let's say we give it the <span style="display: inline" class="pseudocode-inline">i<sup>th</sup></span> unique block), it should look at the <span style="display: inline" class="pseudocode-inline">i<sup>th</sup></span> row of the transition matrix, and pick the next word at random from that probability distribution. We can do this by using a weighted random choice function. 
         </p>
         
         <p>
@@ -121,7 +121,7 @@
         
         <h4>In goes (real) Christmas movie plots, out comes (fake) Christmas movie plots</h4>
         <p>
-        I collected plots of a whole bunch of Christmas movies, and rewrote parts of them to help my chain out a little (for example, making sure they all started with the words 'a woman'). This way, I could kick off my Markov chain with the words 'a woman', play around with <i>k</i>, and see what ideas it had for my Christmas movie heroine. 
+        I collected plots of a whole bunch of Christmas movies, and rewrote parts of them to help my chain out a little (for example, making sure they all started with the words 'a woman'). This way, I could kick off my Markov chain with the words 'a woman', play around with <span style="display: inline" class="pseudocode-inline">k</span>, and see what ideas it had for my Christmas movie heroine. 
         </p>
         
         <p>It came up with some pretty good storylines:</p>

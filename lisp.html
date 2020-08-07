@@ -77,7 +77,7 @@
                 </p>
                 <img src="lisp-evaluator.png" class="images">
                 <p>
-                  Let's start by noting that we need to separate the expression into a function (what operation we should do) and a list of arguments (what we apply the operation on). We're going to make a basic interpreter that supports arithmetic operations, conditional statements, and a few others like <i>define, begin, list, car</i> and <i>cdr</i>.
+                  Let's start by noting that we need to separate the expression into a function (what operation we should do) and a list of arguments (what we apply the operation on). We're going to make a basic interpreter that supports arithmetic operations, conditional statements, and a few others like <span style="display: inline" class="pseudocode-inline">define, begin, list, car</span> and <span style="display: inline" class="pseudocode-inline">cdr</span>.
                   </p>
                   
                   <p>
@@ -85,23 +85,23 @@
                   </p>
                   
                   <p>
-                  Now we're ready to figure out how each of our functions should act on their list of arguments! For arithmetic operations like +, -, * and /, this is super easy. Applying + (or *) to a list of arguments adds up (or multiplies) all the arguments. Applying - (or /) to a list with only one argument returns the negative (the inverse) of that argument, while applying - (or /) to a list with more than one argument returns the first argument minus (or divided by) all the other arguments. In a similar way, we can define the functionality of the =, <, &le;, >, &ge;, <i>expt, sqrt, max, min</i> and <i>abs</i> operations on any list of arguments.
+                  Now we're ready to figure out how each of our functions should act on their list of arguments! For arithmetic operations like <span style="display: inline" class="pseudocode-inline">+, -, *, /</span>, this is super easy. Applying <span style="display: inline" class="pseudocode-inline">+</span> (or <span style="display: inline" class="pseudocode-inline">*</span>) to a list of arguments adds up (or multiplies) all the arguments. Applying <span style="display: inline" class="pseudocode-inline">-</span> (or <span style="display: inline" class="pseudocode-inline">/</span>) to a list with only one argument returns the negative (the inverse) of that argument, while applying <span style="display: inline" class="pseudocode-inline">-</span> (or <span style="display: inline" class="pseudocode-inline">/</span>) to a list with more than one argument returns the first argument minus (or divided by) all the other arguments. In a similar way, we can define the functionality of the <span style="display: inline" class="pseudocode-inline">=, <, &le;, >, &ge;, expt, sqrt, max, min, abs</span> operations on any list of arguments.
                   </p>
                   
                   <p>
-                  Let's move on to some more interesting functions, starting with the <i>if</i> statement. The Scheme syntax for this is <i>(if test conseq1 conseq2)</i>. This means that we should first evaluate <i>test</i>, and if it's True, we return <i>conseq1</i>; otherwise, we return <i>conseq2</i>. To implement this function, we simply need to first check if we have three arguments, check if the first argument is True, and then return the second argument if it is, or return the third argument if it's not.
+                  Let's move on to some more interesting functions, starting with the <span style="display: inline" class="pseudocode-inline">if</span> statement. The Scheme syntax for this is <span style="display: inline" class="pseudocode-inline">(if test conseq1 conseq2)</span>. This means that we should first evaluate <span style="display: inline" class="pseudocode-inline">test</span>, and if it's True, we return <span style="display: inline" class="pseudocode-inline">conseq1</span>; otherwise, we return <span style="display: inline" class="pseudocode-inline">conseq2</span>. To implement this function, we simply need to first check if we have three arguments, check if the first argument is True, and then return the second argument if it is, or return the third argument if it's not.
                   </p>
                   
                   <p>
-                  Another commonly used function is <i>define</i>, which assigns a value to a symbol. Its syntax is <i>(define var x)</i>, telling us that the variable <i>var</i> has the value <i>x</i>. For this, we'll use our dictionary, mapping the first argument (which is the key) to the second argument (which stores its value).
+                  Another commonly used function is <span style="display: inline" class="pseudocode-inline">define</span>, which assigns a value to a symbol. Its syntax is <span style="display: inline" class="pseudocode-inline">(define var x)</span>, telling us that the variable <span style="display: inline" class="pseudocode-inline">var</span> has the value <span style="display: inline" class="pseudocode-inline">x</span>. For this, we'll use our dictionary, mapping the first argument (which is the key) to the second argument (which stores its value).
                   </p>
                   
                   <p>
-                  The <i>begin</i> statement is used to calculate a sequence of expressions and return the last result. For example, <i>(begin (define a 10) (+ a 1))</i> should first define the variable <i>a</i> to be 10, then evaluate and return <i>(+ a 1)</i>, which gives 11. So if we encounter a <i>begin</i> statement as our operation, we just need to return the last argument. 
+                  The <span style="display: inline" class="pseudocode-inline">begin</span> statement is used to calculate a sequence of expressions and return the last result. For example, <span style="display: inline" class="pseudocode-inline">(begin (define a 10) (+ a 1))</span> should first define the variable <span style="display: inline" class="pseudocode-inline">a</span> to be 10, then evaluate and return <span style="display: inline" class="pseudocode-inline">(+ a 1)</span>, which gives 11. So if we encounter a <span style="display: inline" class="pseudocode-inline">begin</span> statement as our operation, we just need to return the last argument. 
                   </p>
                   
                   <p>
-                  The <i>list</i> statement is another simple one, which just returns the arguments as a list. And finally, let's implement the <i>car</i> and <i>cdr</i> operations: the <i>car</i> statement just returns the first element of a list, while the <i>cdr</i> statement returns all elements of a list except for the first.
+                  The <span style="display: inline" class="pseudocode-inline">list</span> statement is another simple one, which just returns the arguments as a list. And finally, let's implement the <span style="display: inline" class="pseudocode-inline">car</span> and <span style="display: inline" class="pseudocode-inline">cdr</span> operations: the <span style="display: inline" class="pseudocode-inline">car</span> statement just returns the first element of a list, while the <span style="display: inline" class="pseudocode-inline">cdr</span> statement returns all elements of a list except for the first.
                   </p>
                   
                   <p>
