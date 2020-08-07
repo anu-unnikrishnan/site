@@ -131,7 +131,85 @@ Even if we've understood the algorithms behind our AI's decision-making, it migh
 We can write our algorithm for implementing Minimax with alpha-beta pruning as a recursive function, as given below for the computer as player O:
 </p>
 
-<img src="tic-tac-toe-code.png" class="images">
+<div class="pseudocode">
+def getcomputermove(board, n, depth, ismax, index, alpha, beta):
+  <div class="tab">
+    <p>
+      <div class="comment">#if reached a terminal state</div>
+      if checkwin(board, n) == +1 or checkwin(board, n) == -1 or checkwin(board, n) == 0: 
+      <div class="tab">
+        score = checkwin(board, n)
+        <br>bestmove = [score, index]
+        <br>return bestmove
+      </div>
+    </p>
+    <p>
+      <div class="comment">#if it's the maximiser's turn</div>
+      if ismax == True: 
+      <div class="tab">
+        score = -∞
+        <div class="comment">#loop through to find blank spaces</div>
+        for i in range(0, n*n): 
+        <div class="tab">
+            if board[i] == ' ':
+            <div class="tab">
+            <div class="comment">#make a copy of the board</div>
+                newboard = board[:] 
+                <br>newboard[i] = ‘O'
+                <div class="comment">#maximiser calls minimiser</div>
+                var = getcomputermove(newboard, n, depth+1, not(ismax), index, alpha, beta)[0] 
+                <div class="comment">#if there's a better maximum score, choose that</div>
+                if var > score: 
+                <div class="tab">
+                    score = var
+                    <br>index = i
+                  </div>
+                <div class="comment">#if there's a better alpha, choose that</div>
+                alpha = max(alpha, score) 
+                <div class="comment">#check if we can prune (will that path give a better option?)</div>
+                if alpha >= beta: 
+                <div class="tab">
+                    break
+                  </div>
+                  </div>
+                </div>
+              </div>
+                  </p>
+    <p>
+      <div class="comment">#if it's the minimiser's turn</div>
+      else: 
+      <div class="tab">
+        score = +∞
+        <br>for i in range(0, n*n):
+        <div class="tab">
+            if board[i] == ' ':
+            <div class="tab">
+                newboard = board[:]
+                <br>newboard[i] = 'X'
+                <div class="comment">#minimiser calls maximiser</div>
+                var = getcomputermove(newboard, n, depth+1, not(ismax), index, alpha, beta)[0] 
+                <div class="comment">#if there's a better minimum score, choose that</div>
+                if var < score: 
+                <div class="tab">
+                    score = var
+                    <br>index = i
+                  </div>
+                <div class="comment">#if there's a better beta, choose that</div>
+                beta = min(beta, score) 
+                <div class="comment">#check if we can prune (will that path give a better option?)</div>
+                if alpha >= beta: 
+                <div class="tab">
+                    break
+                  </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+    bestmove = [score, index]
+    <br>return bestmove
+  </div>
+</div>
+
 <p>
   The program keeps going deeper and deeper down the game tree until it reaches a terminal state, at which point it calculates and returns the score. By keeping track of the best score so far in each subtree, and pruning any branches that won't help, our AI can figure out the score and position of its optimal next move.
   </p>

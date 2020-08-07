@@ -105,7 +105,7 @@ body{
 }
 
 h4{
-  font-family: menlo;
+  font-family: menlo; 
   font-size: 19px;
   background: #ffc7c9;
   color: black;
@@ -125,4 +125,21 @@ h4{
   max-width: 370px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.pseudocode{
+  font-family: menlo;
+  font-size: 12px;
+  background: whitesmoke;
+  padding: 10px;
+}
+
+.comment{
+  font-family: menlo;
+  font-size: 12px;
+  color: #fe6d73;
+}
+
+.tab{ 
+  margin-left: 20px; 
 }
