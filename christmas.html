@@ -39,7 +39,7 @@
       She loves Christmas and every Christmas tradition.
     </div>
     <p>
-      In this sentence, the word <i>she</i> is always followed by the word <i>loves</i>, while the word <i>Christmas</i> is followed by both <i>and</i> and <i>tradition</i>. Let's figure this out for each unique word:
+      In this sentence, the word <span style="display: inline" class="pseudocode-inline">she</span> is always followed by the word <span style="display: inline" class="pseudocode-inline">loves</span>, while the word <span style="display: inline" class="pseudocode-inline">Christmas</span> is followed by both <span style="display: inline" class="pseudocode-inline">and</span> and <span style="display: inline" class="pseudocode-inline">tradition</span>. Let's figure this out for each unique word:
     </p>
     <div class="pseudocode">
       she: [loves] <br> loves: [Christmas] <br> 
@@ -57,7 +57,7 @@
     </p>
     <img src="transition-matrix-1.png" class="images">
     <p>
-      Then, if we want to figure out the probability of the word <i>Christmas</i> being followed by the word <i>and</i>, here's what we do. We go to the row of the transition matrix corresponding to the word <i>Christmas</i> (row 3), and look at the entries in this row. The probability corresponding to the word <i>and</i> is given by the entry in column 4, which is 0.5.
+      Then, if we want to figure out the probability of the word <span style="display: inline" class="pseudocode-inline">Christmas</span> being followed by the word <span style="display: inline" class="pseudocode-inline">and</span>, here's what we do. We go to the row of the transition matrix corresponding to the word <span style="display: inline" class="pseudocode-inline">Christmas</span> (row 3), and look at the entries in this row. The probability corresponding to the word <span style="display: inline" class="pseudocode-inline">and</span> is given by the entry in column 4, which is 0.5.
       </p>
       
       <p>
@@ -123,7 +123,7 @@
       </p>
       <img src="transition-matrix-2.png" class="images">
       <p>
-        This means our chain will never choose the word following the block <i>loves Christmas</i> to be <i>tree</i>, and our problem is solved!
+        This means our chain will never choose the word following the block <span style="display: inline" class="pseudocode-inline">loves Christmas</span> to be <span style="display: inline" class="pseudocode-inline">tree</span>, and our problem is solved!
         </p>
         
         <p>
@@ -154,7 +154,7 @@
         
         <h4>In goes (real) Christmas movie plots, out comes (fake) Christmas movie plots</h4>
         <p>
-        I collected plots of a whole bunch of Christmas movies, and rewrote parts of them to help my chain out a little (for example, making sure they all started with the words '<span style="display: inline" class="pseudocode-inline">a woman</span>'). This way, I could kick off my Markov chain with the words '<span style="display: inline" class="pseudocode-inline">a woman</span>', play around with <span style="display: inline" class="pseudocode-inline">k</span>, and see what ideas it had for my Christmas movie heroine. 
+        I collected plots of a whole bunch of Christmas movies, and rewrote parts of them to help my chain out a little (for example, making sure they all started with the words <span style="display: inline" class="pseudocode-inline">a woman</span>). This way, I could kick off my Markov chain with the words <span style="display: inline" class="pseudocode-inline">a woman</span>, play around with <span style="display: inline" class="pseudocode-inline">k</span>, and see what ideas it had for my Christmas movie heroine. 
         </p>
         
         <p>It came up with some pretty good storylines:</p>
