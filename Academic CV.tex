@@ -1,0 +1,245 @@
+\documentclass[12pt,a4paper]{article}
+%\documentclass[aps,twocolumn,showpacs]{revtex4-1}
+\textheight=9.7in \topmargin=-0.9in   
+\textwidth=6.0in
+\oddsidemargin=0.1in
+\evensidemargin=0.1in
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{charter}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage{algorithm2e}
+\usepackage{braket}
+\usepackage{physics}
+\usepackage{subcaption}
+\usepackage{color}
+\usepackage{array}
+\usepackage{dsfont}
+\usepackage{framed}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{makecell}
+\setlength{\footskip}{50pt}
+\usepackage[normalem]{ulem}
+
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{3pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.9\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\linespread{1.25}
+\newcommand{\middot}{\boldsymbol{\cdot}}
+\begin{document}
+
+\begin{center}
+\fontsize{35pt}{50pt} \selectfont 
+Anupama Unnikrishnan \\ 
+\small \vspace{2mm}
+\includegraphics[trim = 0mm 25mm 25mm 0mm, width = 3.5mm]{email.png} \ anu@anu-unnikrishnan.com $\middot$
+\includegraphics[trim = 0mm 10mm 0mm 0mm, width = 4mm]{github.png} anu-unnikrishnan $\middot$ 
+\includegraphics[trim = 0mm 10mm 0mm 0mm, width = 4mm]{linkedin.png} anuunnikrishnan \\
+\end{center}
+\normalsize
+
+\vspace{2mm}
+
+\section*{Education \sout{\hfill} }
+
+\vspace{2mm}
+
+\textbf{University of Oxford}  \\
+DPhil (PhD) Physics, Quantum Information and Cryptography $\middot$ 2015 - 2019 \\
+\textit{Thesis}: Enforcing trust in quantum networks \\
+\textit{Supervisors}: Vlatko Vedral, Damian Markham \\ 
+\textit{Collaboration}: Laboratoire d'Informatique de Paris 6, Sorbonne Universit\'e \\ \\ 
+\textbf{University of Leeds} \\
+MPhys + BSc Physics (International), 1st Class (Hons) $\middot$ 2011 - 2015 \\
+\textit{Year abroad}: University of California, Santa Cruz 
+
+\vspace{2mm}
+
+\section*{Research Experience \sout{\hfill} }
+
+\vspace{3mm}
+
+\begin{flushleft}
+\textbf{Verification of graph states} \\
+\textit{University of Oxford, Sorbonne Universit\'e} $\middot$ 2018 - 2020 \\
+Developed protocol for verification of any graph state in a network  \\
+Proved security of protocol in presence of any number of dishonest parties 
+\end{flushleft}
+
+\vspace{1mm}
+
+\begin{flushleft}
+\textbf{Anonymous quantum communication} \\
+\textit{University of Oxford, Sorbonne Universit\'e} $\middot$ 2017 - 2018 \\
+Developed protocol for verified anonymous quantum transmission \\
+Proved security of protocol in realistic networks with any number of dishonest parties 
+\end{flushleft}
+
+\vspace{1mm}
+
+\begin{flushleft}
+\textbf{Authenticated quantum communication} \\
+\textit{University of Oxford, Sorbonne Universit\'e} $\middot$ 2016 - 2018 \\
+Developed experimentally feasible protocols for authenticated transfer of quantum messages \\
+Proved security of protocol despite untrusted devices using semidefinite programming methods 
+\end{flushleft}
+\newpage
+\begin{flushleft}
+\textbf{Classical post-processing of quantum key distribution} \\
+\textit{University of Leeds} $\middot$ 2014 - 2015 \\
+Examined security of classical post-processing algorithms for quantum key distribution \\ 
+Computationally implemented combination of Advantage Distillation and Cascade \\
+Demonstrated successful hacking by eavesdropper 
+\end{flushleft} 
+
+\vspace{1mm}
+
+\begin{flushleft}
+\textbf{Computational simulation of fluids} \\
+\textit{University of California, Los Angeles} $\middot$ 2014 \\ 
+Applied mathematics research for Walt Disney Animation Studios \\
+Investigated efficient method for computational simulation of fluids by domain decomposition
+\end{flushleft}
+
+\vspace{1mm}
+
+\begin{flushleft}
+\textbf{Detection of exoplanets} \\
+\textit{University of California, Santa Cruz} $\middot$ 2014 \\
+Astrophysics research on detecting extra-solar planets \\
+Analysed data from NASA Kepler telescope using transit method to find planetary candidates 
+\end{flushleft}
+
+\vspace{1mm}
+
+\begin{flushleft}
+\textbf{Searching for dark matter candidates} \\
+\textit{University of M\"unster, Germany} $\middot$ 2013 \\
+Theoretical particle physics research on dark matter \\
+Implemented efficient scanning of large parameter-space for dark matter candidates using computational methods and Monte-Carlo Markov chains 
+\end{flushleft}
+
+\vspace{1mm}
+
+\section*{Other Experience \sout{\hfill}}
+
+\vspace{3mm}
+
+\begin{flushleft}
+\textbf{Recurse Center} \\
+\textit{New York City, USA} $\middot$ 2020 \\ 
+Self-directed programming projects in AI, machine learning, data analysis, web development, etc. \\
+Built maze solver using reinforcement learning, minimax-based game AI, NLP movie plot generator, neural network from scratch, Lisp interpreter, Scrabble AI, hike recommendation web app, among other projects \\ 
+Took courses and studied algorithms, machine learning, game theory, programming languages 
+\end{flushleft}
+
+\section*{Publications \sout{\hfill}}
+
+\vspace{2mm}
+
+\textbf{Anonymity for practical quantum networks} \\
+\underline{A. Unnikrishnan}, I. J. MacFarlane, R. Yi, E. Diamanti, D. Markham, I. Kerenidis \\
+Physical Review Letters 122, 240501 (2019) \\ \\
+\textbf{Authenticated teleportation with one-sided trust} \\
+\underline{A. Unnikrishnan}, D. Markham \\ 
+Physical Review A 100, 032314 (2019) \\ \\
+\textbf{Authenticated teleportation and verification in a noisy network} \\
+\underline{A. Unnikrishnan}, D. Markham \\
+arXiv:1911.0700 (2019) \\ \\ 
+\textbf{Verification of graph states in an untrusted network} \\
+\underline{A. Unnikrishnan}, D. Markham \\
+arXiv:2007.13126 (2020)
+
+\vspace{2mm}
+
+\section*{Conference Talks \sout{\hfill}}
+
+\vspace{2mm}
+
+Enthusiasticon $\middot$ \textit{Remote} (2020) \\ 
+Edinburgh-Paris Quantum Workshop $\middot$ \textit{Edinburgh, Scotland} (2019) \\ 
+Conference on Quantum Information and Quantum Control $\middot$ \textit{Toronto, Canada} (2019) \\ 
+Quantum Internet Alliance Consortium Meeting $\middot$ \textit{Lisbon, Portugal} (2019) \\ 
+Conference of the European Flagship for Quantum Technologies $\middot$ \textit{Grenoble, France} (2019) \\  
+Conference on Quantum Structures and Quantum Information Theory $\middot$ \textit{Cagliari, Italy} (2018) \\  
+Workshop at the Centre for Quantum Technologies $\middot$ \textit{Singapore} (2016)
+
+\vspace{2mm}
+
+\section*{Awards \sout{\hfill}}
+
+\vspace{2mm}
+
+EPSRC PhD Studentship $\middot$ 2015 - 2019 \\ 
+Trinity College Graduate Prize, University of Oxford $\middot$ 2016 \\
+Brotherton Science Scholarship $\middot$ 2011 - 2014 \\
+Best Second Year Student Prize, University of Leeds $\middot$ 2013  \\
+Scriven Bolton Prize in Astronomy, University of Leeds $\middot$ 2012
+
+\section*{Programming Experience \sout{\hfill}}
+
+\vspace{2mm}
+
+\textbf{Languages} \\
+Python, C++, C, Matlab, Javascript, Scheme, Mathematica, HTML, CSS, Bash \\ \\ 
+\textbf{Libraries and Frameworks} \\
+NumPy, Pandas, Matplotlib, TensorFlow, Keras, Scikit-learn, Textgenrnn, Flask, D3.js, BeautifulSoup, Multiprocessing
+
+\section*{Leadership Positions \sout{\hfill}}
+
+\vspace{2mm}
+
+Oxford Women in Physics Society $\middot$ \textit{Events Coordinator} $\middot$ 2017 - 2018 \\ 
+Trinity College, University of Oxford $\middot$ \textit{Social Secretary} $\middot$ 2016 - 2017 \\ 
+Department of Physics, University of Leeds $\middot$ \textit{Peer Mentor} $\middot$ 2012 - 2013 \\ 
+Global Community, University of Leeds $\middot$ \textit{Intercultural Ambassador} $\middot$ 2012 - 2013 
+
+%\section*{References \sout{\hfill}}
+%
+%\vspace{2mm}
+%
+%\textbf{Dr. Damian Markham} \\ 
+%LIP6 Sorbonne Universit\'e \\ 
+%damian.markham@lip6.fr \\ \\ 
+%\textbf{Prof. Vlatko Vedral} \\
+%University of Oxford, National University of Singapore \\ 
+%vlatko.vedral@physics.ox.ac.uk \\ \\
+%\textbf{Prof. Elham Kashefi} \\
+%University of Edinburgh, LIP6 Sorbonne Universit\'e \\ 
+%ekashefi@gmail.com \\ \\
+%\textbf{Dr. Iordanis Kerenidis} \\
+%IRIF Universit\'e Paris Diderot \\ 
+%jkeren@irif.fr \\ \\
+%\textbf{Dr. Eleni Diamanti} \\
+%LIP6 Sorbonne Universit\'e \\
+%eleni.diamanti@upmc.fr
+
+\end{document}
